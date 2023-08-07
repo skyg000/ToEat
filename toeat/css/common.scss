@@ -2,8 +2,53 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 /* reset */
 * {box-sizing: border-box;}
-html, body {@include mp-reset; @include pr-b{font-size:25px;}}
+html, body {@include mp-reset;}
 img {width:100%; object-fit: cover; vertical-align: middle;}
 ul {list-style: none; @include mp-reset;}
 figure,article {@include mp-reset;}
 a {text-decoration: none; color:#000;}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1200px; margin:0px auto;
+    > figure {
+        width: 220px;
+    }
+    > nav {
+        width: calc(100% - 220px);
+        > ul {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap : 30px;
+            > li {
+                position: relative;
+                @include pr-r{font-size:18px;}
+                &.active{
+                     @include pr-b{font-size:18px;}
+                }
+                &:hover{
+                    > ul{display: block;}
+                }
+                > ul{
+                    position: absolute;
+                    display: none;
+                    > li {
+                        padding:10px 0;
+                        @include pr-r{font-size:18px;}
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    width: 1200px;
+    margin: 0px auto;
+    > section {
+        display: flex;
+    }
+}

@@ -1,0 +1,13 @@
+@import url("common.css");
+main {
+  width: 1200px;
+  margin: 50px auto;
+}
+main .list {
+  width: 1200px;
+  margin: 0 auto;
+}
+main .list h1 {
+  font-size: 25px;
+  font-weight: bold;
+}/*# sourceMappingURL=sub2.css.map */
