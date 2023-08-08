@@ -1,13 +1,44 @@
-@import url("common.css");
+@import url("../common.css");
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
 main {
   width: 1200px;
   margin: 50px auto;
 }
 main .list {
   width: 1200px;
+  height: 100%;
   margin: 0 auto;
 }
 main .list h1 {
-  font-size: 25px;
-  font-weight: bold;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 30px;
+}
+main .list ul {
+  display: flex;
+}
+main .list ul li {
+  flex-grow: 1;
+  margin: 0 auto;
+  border: 1px solid #D9D9D9;
+  height: 70px;
+}
+main .list ul li a {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .list ul li.on {
+  background-color: #eee;
 }/*# sourceMappingURL=sub2.css.map */

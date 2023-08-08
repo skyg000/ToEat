@@ -12,6 +12,10 @@ function link(v,k){
 
 function k() {
     sessionStorage.active && $('header nav ul li').eq(sessionStorage.active).addClass('active')
+    if(sessionStorage.active != 0) {
+        sessionStorage.active && $('header').addClass('sub')
+        sessionStorage.active && $('footer').addClass('sub')
+    }
     $("header nav ul li a").click(function(e){
         e.preventDefault();
         let li = $("header nav ul li a").index(this), url = $(this).attr('href')
