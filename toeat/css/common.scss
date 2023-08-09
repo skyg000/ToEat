@@ -11,6 +11,7 @@ a {text-decoration: none; color:#000;}
 header {
     width: 100%;
     position: fixed;
+    z-index: 1;
     > section{
         display: flex;
         justify-content: space-between;
@@ -88,6 +89,7 @@ footer {
 header.sub{
     position: sticky;
     top:0; background: #fff;
+    z-index: 1;
 }
 
 
@@ -150,5 +152,6 @@ footer.sub {
     }
 }
 
-
+@import './scss/_main';
 @import './scss/_sub4';
+@import './scss/_sub2';

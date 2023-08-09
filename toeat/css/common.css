@@ -2,6 +2,7 @@
 /* 폰트 설정 */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 /* reset */
+@import url("../common.css");
 * {
   box-sizing: border-box;
 }
@@ -36,6 +37,7 @@ a {
 header {
   width: 100%;
   position: fixed;
+  z-index: 1;
 }
 header > section {
   display: flex;
@@ -132,6 +134,7 @@ header.sub {
   position: sticky;
   top: 0;
   background: #fff;
+  z-index: 1;
 }
 
 footer.sub::before {
@@ -179,10 +182,254 @@ footer.sub::after {
     display: block;
   }
 }
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.column > div {
+  margin-bottom: 10px;
+  height: 25px;
+  color: #787878;
+}
+
+.icon {
+  width: 17px;
+  height: 18px;
+}
+
+.deco-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10%;
+}
+
+.deco-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 10%;
+}
+
+.main {
+  background-image: url("../images/main-img/summer_bg_main_map.jpg.png");
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+.main::before {
+  content: "";
+  width: 206px;
+  height: 275px;
+  background-image: url(../images/main-img/div.visual-deco-left.png);
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.main::after {
+  content: "";
+  width: 174px;
+  height: 366px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-position: right top;
+  background-size: 100%;
+  background-image: url("../images/main-img/div.visual-deco-right.png");
+}
+.main > article {
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.main > article .char1 {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 15%;
+  z-index: 3;
+}
+.main > article .char2 {
+  position: absolute;
+  right: 2%;
+  bottom: 2%;
+  width: 20%;
+  z-index: 3;
+}
+.main > article .char3 {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  width: 7%;
+  z-index: 3;
+}
+.main > article .char4 {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  width: 20%;
+  z-index: 5;
+}
+.main > article .char5 {
+  position: absolute;
+  left: 0%;
+  bottom: 0%;
+  width: 100%;
+  z-index: 0;
+  opacity: 50%;
+}
+.main > article .char6 {
+  position: absolute;
+  left: 45%;
+  top: 15%;
+  width: 15%;
+  z-index: 3;
+}
+.main > article .char7 {
+  position: absolute;
+  left: 7%;
+  bottom: 40%;
+  width: 5%;
+  z-index: 3;
+}
+.main > article .char8 {
+  position: absolute;
+  right: 25%;
+  bottom: 7%;
+  width: 5%;
+  z-index: 3;
+  transform: rotateY(180deg);
+}
+.main > article .map {
+  width: 40%;
+  position: absolute;
+  left: 10%;
+  top: 20%;
+}
+.main > article .food-icon {
+  width: 32%;
+  position: absolute;
+  left: 14%;
+  top: 30%;
+  z-index: 3;
+}
+.main > article .store {
+  width: 430px;
+  height: 600px;
+  border-radius: 20px 20px 6px 6px;
+  background-color: #fff;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main > article .padding {
+  padding: 5px;
+}
+.main > article .store-img {
+  width: 100%;
+  height: 180px;
+}
+.main > article .store-img > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.main > article .store-name {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 22px;
+  margin: 20px 0;
+}
+.main > article .look-detail1 {
+  color: #BB4F59;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 18px;
+  display: none;
+  margin-right: 15px;
+  gap: 10px;
+}
+.main > article .look-detail2 {
+  color: #BB4F59;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  margin-right: 15px;
+  gap: 10px;
+  border-top: 1px solid lightgray;
+  padding-top: 20px;
+}
+
 main {
   margin-bottom: 80px;
 }
 main article {
   width: 1200px;
   margin: 0px auto;
-}/*# sourceMappingURL=common.css.map */
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+main {
+  width: 1200px;
+  margin: 50px auto;
+}
+main .list {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+}
+main .list h1 {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 30px;
+}
+main .list .listin {
+  display: flex;
+}
+main .list .listin .on1 {
+  flex-grow: 1;
+  margin: 0 auto;
+  border: 1px solid #D9D9D9;
+  height: 70px;
+}
+main .list .listin .on1 .d {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .list .listin .on1.on {
+  background-color: #eee;
+}
+main .contents .con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 200px;
+}
+main .contents .con .on2 img {
+  width: 100px;
+}
+
+/* @import "../scss/sub2"; *//*# sourceMappingURL=common.css.map */
