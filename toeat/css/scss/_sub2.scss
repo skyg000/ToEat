@@ -37,12 +37,14 @@ main{
         }
     }
 }
-.contents{
+.stores{
     .con{
+        width: 1200px;
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
         align-items: center;
-        margin: 200px;
+        margin: 200px 0;
         .on2{
             img{
                 width: 100px;

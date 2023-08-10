@@ -422,13 +422,15 @@ main .list .listin .on1 .d {
 main .list .listin .on1.on {
   background-color: #eee;
 }
-main .contents .con {
+main .stores .con {
+  width: 1200px;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
-  margin: 200px;
+  margin: 200px 0;
 }
-main .contents .con .on2 img {
+main .stores .con .on2 img {
   width: 100px;
 }
 
