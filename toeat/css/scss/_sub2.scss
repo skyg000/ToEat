@@ -40,14 +40,14 @@ main{
 .stores{
     .con{
         width: 1200px;
+        height: 500px;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        margin: 200px 0;
+        margin: 50px 0;
         .on2{
+            text-align: center;
+            border: 1px solid black;
             img{
-                width: 100px;
+                width: 200px;
             }
         }
     }
