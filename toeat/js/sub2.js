@@ -1,4 +1,5 @@
-let s_code = ['1721530874','31564605','13321644','11717437'], w_code = ['31564605','13321644','31564605','13321644'];
+let s_code = ['1721530874','31564605','13321644','11717437','12788575','13113902','1555782691','11717437'],
+    w_code = ['31564605','13321644','31564605','13321644'];
 
 sessionStorage.setItem('s_code',s_code)
 localStorage.setItem('w_code',w_code)
@@ -36,7 +37,7 @@ function list(q) {
                     tag += `
                     <li class="on2">
                         <img src="${v.images}" alt="">
-                        <p>${v.name}</p>
+                        <b>${v.name}</b>
                         <p>${v.adress}</p>
                         <p>${v.time}</p>
                         <p>${v.phone}</p>

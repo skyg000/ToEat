@@ -6,11 +6,12 @@
     font-style: normal;
 }
 @mixin pr-b {font-family: 'pretendard'; font-weight: 700; @content;}
+@mixin wid {width: 1200px;}
 main{
-    width: 1200px;
+    @include wid();
     margin: 50px auto;
 .list{
-    width: 1200px;
+    @include wid();
     height: 100%;
     margin: 0 auto;
     h1{
@@ -39,15 +40,29 @@ main{
 }
 .stores{
     .con{
-        width: 1200px;
-        height: 500px;
+        @include wid();
         display: flex;
+        flex-wrap: wrap;
         margin: 50px 0;
         .on2{
+            width: 24%;
             text-align: center;
             border: 1px solid black;
+            margin: 6px;
+            border-radius: 20px;
+            b{
+                @include pr-b{font-size: 20px};
+            }
+            p{
+                @include pr-b{font-size: 16px};
+                text-align: left;
+                margin: 10px 17px 10px 15px;
+            }
             img{
-                width: 200px;
+                width: 100%;
+                height: 250px;
+                margin-bottom: 10px;
+                border-radius: 20px;
             }
         }
     }
