@@ -36,9 +36,12 @@ function list(q) {
                 if(v.code == q[i]){
                     tag += `
                     <li class="on2">
-                        <img src="${v.images}" alt="">
+                        <figure>
+                            <img src="${v.images}" alt="">
+                            <p class = "ad">${v.adress}</p>
+                            
+                            </figure>
                         <b>${v.name}</b>
-                        <p>${v.adress}</p>
                         <p>${v.time}</p>
                         <p>${v.phone}</p>
                     </li>
