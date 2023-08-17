@@ -8,6 +8,7 @@
 }
 @mixin pr-b {font-family: 'pretendard'; font-weight: 700; @content;}
 @mixin wid {width: 1200px;}
+@mixin wid1 {width: 100%;}
 main{
     @include wid();
     margin: 50px auto;
@@ -55,20 +56,27 @@ main{
                 @include pr-b{font-size: 20px};
             }
             figure{
+                position: relative;
                 .ad{
                     @include pr-b{font-size: 16px};
                     text-align: left;
-                    margin: 10px 17px 10px 0px;
+                    margin: 10px 17px 10px 25px;
                     position: absolute;
-                    top: 58%;
+                    top: 75%;
                     color: white;
                 }
-
+                i{
+                    position: absolute;
+                    left: 5px;
+                    bottom: 15%;
+                    color: white;
+                }
                 img{
                     width: 100%;
                     height: 250px;
                     margin-bottom: 10px;
                     border-radius: 20px;
+                    filter: brightness(0.7);
                 }
             }
             p{
@@ -76,15 +84,176 @@ main{
                 text-align: left;
                 margin: 10px 17px 10px 15px;
             }
-            img{
-                width: 100%;
-                height: 250px;
-                margin-bottom: 10px;
-                border-radius: 20px;
-            }
+            
         }
     }
 }
 }
-
+@media (max-width:1200px) and (min-width:481px){
+    main{
+        @include wid1();
+        margin: 50px auto;
+    .list{
+        @include wid1();
+        height: 100%;
+        margin: 0 auto;
+        h1{
+            @include pr-b{font-size: 30px};
+        }
+        .listin{
+            display: flex;
+            .on1{
+                flex-grow: 1;
+                margin: 0 auto;
+                border: 1px solid #D9D9D9;
+                height: 70px;
+                .d{
+                    @include pr-b{font-size: 20px};
+                    
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                &.on{
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+    .stores{
+        @include wid1();
+        .con{
+            @include wid1();
+            display: flex;
+            flex-wrap: wrap;
+            margin: 50px 0;
+            .on2{
+                width: 24%;
+                text-align: center;
+                border: 1px solid black;
+                margin: 6px;
+                border-radius: 20px;
+                b{
+                    @include pr-b{font-size: 20px};
+                }
+                figure{
+                    position: relative;
+                    .ad{
+                        @include pr-b{font-size: 16px};
+                        text-align: left;
+                        margin: 10px 17px 10px 25px;
+                        position: absolute;
+                        top: 75%;
+                        color: white;
+                    }
+                    i{
+                        position: absolute;
+                        left: 5px;
+                        bottom: 15%;
+                        color: white;
+                    }
+                    img{
+                        width: 100%;
+                        height: 250px;
+                        margin-bottom: 10px;
+                        border-radius: 20px;
+                        filter: brightness(0.7);
+                    }
+                }
+                p{
+                    @include pr-b{font-size: 16px};
+                    text-align: left;
+                    margin: 10px 17px 10px 15px;
+                }
+                
+            }
+        }
+    }
+    }
+}
+@media (max-width:480px){
+    main{
+        @include wid1();
+        margin: 50px auto;
+    .list{
+        @include wid1();
+        height: 100%;
+        margin: 0 auto;
+        h1{
+            @include pr-b{font-size: 30px};
+        }
+        .listin{
+            display: flex;
+            .on1{
+                flex-grow: 0;
+                margin: 0 ;
+                border: 1px solid #D9D9D9;
+                height: 70px;
+                .d{
+                    @include pr-b{font-size: 20px};
+                    padding: 0 70px;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                &.on{
+                    background-color: #eee;
+                }
+            }
+        }
+    }
+    .stores{
+        @include wid1();
+        .con{
+            @include wid1();
+            display: flex;
+            flex-wrap: wrap;
+            margin: 50px 0 150px;
+            .on2{
+                width: 30%;
+                text-align: center;
+                border: 1px solid black;
+                margin: 6px;
+                border-radius: 20px;
+                b{
+                    @include pr-b{font-size: 15px};
+                }
+                figure{
+                    position: relative;
+                    .ad{
+                        @include pr-b{font-size: 12px};
+                        text-align: left;
+                        margin: 10px 17px 10px 25px;
+                        position: absolute;
+                        top: 60%;
+                        color: white;
+                    }
+                    i{
+                        position: absolute;
+                        left: 5px;
+                        bottom: 23%;
+                        color: white;
+                    }
+                    img{
+                        width: 100%;
+                        height: 150px;
+                        margin-bottom: 10px;
+                        border-radius: 20px;
+                        filter: brightness(0.7);
+                        object-fit: cover;
+                    }
+                }
+                p{
+                    @include pr-b{font-size: 12px};
+                    text-align: left;
+                    margin: 10px 17px 10px 15px;
+                }
+                
+            }
+        }
+    }
+    }
+}
 /* @import "../scss/sub2"; */

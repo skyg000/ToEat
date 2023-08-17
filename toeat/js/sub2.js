@@ -38,14 +38,17 @@ function list(q) {
                     <li class="on2">
                         <figure>
                             <img src="${v.images}" alt="">
-                            <p class = "ad">${v.adress}</p>
-                            
-                            </figure>
-                        <b>${v.name}</b>
-                        <p>${v.time}</p>
-                        <p>${v.phone}</p>
-                    </li>
+                            <p class = "ad">
+                            ${v.adress}
+                            </p>
+                            <i class="fa-solid fa-location-dot"></i>
+                        </figure>
+                            <b>${v.name}</b>
+                            <p>${v.time}</p>
+                            <p>${v.phone}</p>
+                            </li>
                     `
+                    
                 }
             }
         })

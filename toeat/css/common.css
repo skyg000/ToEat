@@ -440,14 +440,23 @@ main .stores .con .on2 b {
   font-weight: 700;
   font-size: 20px;
 }
+main .stores .con .on2 figure {
+  position: relative;
+}
 main .stores .con .on2 figure .ad {
   font-family: "pretendard";
   font-weight: 700;
   font-size: 16px;
   text-align: left;
-  margin: 10px 17px 10px 0px;
+  margin: 10px 17px 10px 25px;
   position: absolute;
-  top: 58%;
+  top: 75%;
+  color: white;
+}
+main .stores .con .on2 figure i {
+  position: absolute;
+  left: 5px;
+  bottom: 15%;
   color: white;
 }
 main .stores .con .on2 figure img {
@@ -455,6 +464,7 @@ main .stores .con .on2 figure img {
   height: 250px;
   margin-bottom: 10px;
   border-radius: 20px;
+  filter: brightness(0.7);
 }
 main .stores .con .on2 p {
   font-family: "pretendard";
@@ -463,11 +473,195 @@ main .stores .con .on2 p {
   text-align: left;
   margin: 10px 17px 10px 15px;
 }
-main .stores .con .on2 img {
-  width: 100%;
-  height: 250px;
-  margin-bottom: 10px;
-  border-radius: 20px;
-}
 
-/* @import "../scss/sub2"; *//*# sourceMappingURL=common.css.map */
+@media (max-width: 1200px) and (min-width: 481px) {
+  main {
+    width: 100%;
+    margin: 50px auto;
+  }
+  main .list {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  main .list h1 {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 30px;
+  }
+  main .list .listin {
+    display: flex;
+  }
+  main .list .listin .on1 {
+    flex-grow: 1;
+    margin: 0 auto;
+    border: 1px solid #D9D9D9;
+    height: 70px;
+  }
+  main .list .listin .on1 .d {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .list .listin .on1.on {
+    background-color: #eee;
+  }
+  main .stores {
+    width: 100%;
+  }
+  main .stores .con {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0;
+  }
+  main .stores .con .on2 {
+    width: 24%;
+    text-align: center;
+    border: 1px solid black;
+    margin: 6px;
+    border-radius: 20px;
+  }
+  main .stores .con .on2 b {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 20px;
+  }
+  main .stores .con .on2 figure {
+    position: relative;
+  }
+  main .stores .con .on2 figure .ad {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    margin: 10px 17px 10px 25px;
+    position: absolute;
+    top: 75%;
+    color: white;
+  }
+  main .stores .con .on2 figure i {
+    position: absolute;
+    left: 5px;
+    bottom: 15%;
+    color: white;
+  }
+  main .stores .con .on2 figure img {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    filter: brightness(0.7);
+  }
+  main .stores .con .on2 p {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+    margin: 10px 17px 10px 15px;
+  }
+}
+@media (max-width: 480px) {
+  main {
+    width: 100%;
+    margin: 50px auto;
+  }
+  main .list {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  main .list h1 {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 30px;
+  }
+  main .list .listin {
+    display: flex;
+  }
+  main .list .listin .on1 {
+    flex-grow: 0;
+    margin: 0;
+    border: 1px solid #D9D9D9;
+    height: 70px;
+  }
+  main .list .listin .on1 .d {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 20px;
+    padding: 0 70px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .list .listin .on1.on {
+    background-color: #eee;
+  }
+  main .stores {
+    width: 100%;
+  }
+  main .stores .con {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0 150px;
+  }
+  main .stores .con .on2 {
+    width: 30%;
+    text-align: center;
+    border: 1px solid black;
+    margin: 6px;
+    border-radius: 20px;
+  }
+  main .stores .con .on2 b {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 15px;
+  }
+  main .stores .con .on2 figure {
+    position: relative;
+  }
+  main .stores .con .on2 figure .ad {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 12px;
+    text-align: left;
+    margin: 10px 17px 10px 25px;
+    position: absolute;
+    top: 60%;
+    color: white;
+  }
+  main .stores .con .on2 figure i {
+    position: absolute;
+    left: 5px;
+    bottom: 23%;
+    color: white;
+  }
+  main .stores .con .on2 figure img {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    filter: brightness(0.7);
+    object-fit: cover;
+  }
+  main .stores .con .on2 p {
+    font-family: "pretendard";
+    font-weight: 700;
+    font-size: 12px;
+    text-align: left;
+    margin: 10px 17px 10px 15px;
+  }
+}
+/* @import "../scss/sub2"; */
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}/*# sourceMappingURL=common.css.map */
