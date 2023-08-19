@@ -1,0 +1,7 @@
+@import url("../common.css");
+@mixin pr-b {font-family: 'pretendard'; font-weight: 700; @content;}
+@mixin wid {width: 1000px;}
+@mixin wid1 {width: 100%;}
+.detail{
+    @include wid();
+}
