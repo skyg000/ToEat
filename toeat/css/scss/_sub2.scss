@@ -1,4 +1,4 @@
-@media (max-width : 919px) {
+/* @media (max-width : 919px) {
     main{
         .stores{
             .con{
@@ -48,7 +48,7 @@
             }
         }
     }
-    }
+    } */
 
 @import url("../common.css");
 @font-face {
@@ -190,22 +190,22 @@ main{
                 margin: 6px 0;
                 border-radius: 20px;
                 b{
-                    @include pr-b{font-size: 20px};
+                    @include pr-b{font-size: 16px};
                 }
                 figure{
                     position: relative;
                     .ad{
-                        @include pr-b{font-size: 16px};
+                        @include pr-b{font-size: 14px};
                         text-align: left;
                         margin: 10px 17px 10px 25px;
                         position: absolute;
-                        top: 75%;
+                        top: 70%;
                         color: white;
                     }
                     i{
                         position: absolute;
                         left: 5px;
-                        bottom: 15%;
+                        bottom: 20%;
                         color: white;
                     }
                     img{
@@ -217,7 +217,7 @@ main{
                     }
                 }
                 p{
-                    @include pr-b{font-size: 16px};
+                    @include pr-b{font-size: 14px};
                     text-align: left;
                     margin: 10px 17px 10px 15px;
                 }

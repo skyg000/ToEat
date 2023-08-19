@@ -3,6 +3,7 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
 /* reset */
 @import url("../common.css");
+@import url("../common.css");
 * {
   box-sizing: border-box;
 }
@@ -381,29 +382,57 @@ main article {
   margin: 0px auto;
 }
 
-@media (max-width: 919px) {
-  main .stores .con .on2 {
-    width: 31%;
-  }
-}
-@media (max-width: 876px) {
-  main .stores .con .on2 {
-    width: 30%;
-  }
-}
-@media (max-width: 629px) {
-  main .stores .con .on2 {
-    width: 46%;
-  }
-}
-@media (max-width: 758px) {
-  main .stores .con .on2 figure .ad {
-    top: 70% !important;
-  }
-  main .stores .con .on2 figure i {
-    bottom: 20% !important;
-  }
-}
+/* @media (max-width : 919px) {
+    main{
+        .stores{
+            .con{
+                .on2{
+                    width: 31% ;
+                }
+            }
+        }
+    }
+    }
+@media (max-width : 876px) {
+    main{
+        .stores{
+            .con{
+                .on2{
+                    width: 30% ;
+                }
+            }
+        }
+    }
+    }
+@media (max-width : 629px) {
+    main{
+        .stores{
+            .con{
+                .on2{
+                    width: 46%;
+                }
+            }
+        }
+    }
+    }
+@media (max-width : 758px) {
+    main{
+        .stores{
+            .con{
+                .on2{
+                    figure{
+                        .ad{
+                            top:70% !important
+                        }
+                        i{
+                            bottom:20% !important
+                        }
+                    }
+                }
+            }
+        }
+    }
+    } */
 @font-face {
   font-family: "Pretendard-Regular";
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
@@ -556,7 +585,7 @@ main .stores .con .on2 p {
   main .stores .con .on2 b {
     font-family: "pretendard";
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
   }
   main .stores .con .on2 figure {
     position: relative;
@@ -564,17 +593,17 @@ main .stores .con .on2 p {
   main .stores .con .on2 figure .ad {
     font-family: "pretendard";
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     text-align: left;
     margin: 10px 17px 10px 25px;
     position: absolute;
-    top: 75%;
+    top: 70%;
     color: white;
   }
   main .stores .con .on2 figure i {
     position: absolute;
     left: 5px;
-    bottom: 15%;
+    bottom: 20%;
     color: white;
   }
   main .stores .con .on2 figure img {
@@ -587,7 +616,7 @@ main .stores .con .on2 p {
   main .stores .con .on2 p {
     font-family: "pretendard";
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
     text-align: left;
     margin: 10px 17px 10px 15px;
   }

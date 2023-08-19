@@ -1,4 +1,4 @@
-
+@import url("../common.css");
 @font-face {
     font-family: 'Pretendard-Regular';
     src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
@@ -7,3 +7,5 @@
 }
 
 @mixin pr-b {font-family: 'pretendard'; font-weight: 700; @content;}
+@mixin wid {width: 1200px;}
+@mixin wid1 {width: 100%;}
