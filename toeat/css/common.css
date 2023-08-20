@@ -724,6 +724,56 @@ main .stores .con .on2 p {
   }
 }
 /* @import "../scss/sub2"; */
+header {
+  position: relative; /* 마지막에 지움 */
+}
+
+main {
+  width: 870px;
+}
+
 .detail {
-  width: 1000px;
+  width: 870px;
+}
+.detail .logo {
+  width: 100%;
+}
+.detail .logo img {
+  width: 150px;
+  position: relative;
+  left: 40%;
+}
+.detail .d-on b {
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  color: #FF6888;
+  display: block;
+  margin: 65px auto;
+}
+.detail .d-on figure img {
+  width: 100%;
+}
+.detail .d-on p {
+  text-align: left;
+  font-family: "pretendard";
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.rev {
+  position: relative;
+}
+.rev a {
+  position: absolute;
+  right: 10%;
+  border: 1px solid black;
+  border-radius: 50%;
+  color: white;
+  background-color: #FF6888;
+}
+.rev a i {
+  padding: 20px;
+  font-size: 50px;
 }/*# sourceMappingURL=common.css.map */

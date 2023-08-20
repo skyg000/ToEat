@@ -36,17 +36,19 @@ function list(q) {
                 if(v.code == q[i]){
                     tag += `
                     <li class="on2">
-                        <figure>
-                            <img src="${v.images}" alt="">
-                            <p class = "ad">
-                            ${v.adress}
-                            </p>
-                            <i class="fa-solid fa-location-dot"></i>
-                        </figure>
-                            <b>${v.name}</b>
-                            <p>${v.time}</p>
-                            <p>${v.phone}</p>
-                            </li>
+                        <a href="./detail.html">
+                            <figure>
+                                <img src="${v.images}" alt="">
+                                <p class = "ad">
+                                ${v.adress}
+                                </p>
+                                <i class="fa-solid fa-location-dot"></i>
+                            </figure>
+                                <b>${v.name}</b>
+                                <p>${v.time}</p>
+                                <p>${v.phone}</p>
+                        </a>
+                    </li>
                     `
                     
                 }
