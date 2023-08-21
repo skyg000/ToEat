@@ -12,6 +12,7 @@ header{
     @include wid();
 .logo{
     @include wid1();
+    
     img{
         width: 150px;
         position: relative;
