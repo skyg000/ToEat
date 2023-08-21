@@ -5,10 +5,10 @@
 header{
     position: relative;  /* 마지막에 지움 */
 }
-main{
+.detail{
     width: 870px
 }
-.detail{
+.detail-p{
     @include wid();
 .logo{
     @include wid1();

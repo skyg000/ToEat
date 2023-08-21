@@ -728,22 +728,22 @@ header {
   position: relative; /* 마지막에 지움 */
 }
 
-main {
-  width: 870px;
-}
-
 .detail {
   width: 870px;
 }
-.detail .logo {
+
+.detail-p {
+  width: 870px;
+}
+.detail-p .logo {
   width: 100%;
 }
-.detail .logo img {
+.detail-p .logo img {
   width: 150px;
   position: relative;
   left: 40%;
 }
-.detail .d-on b {
+.detail-p .d-on b {
   font-family: "pretendard";
   font-weight: 700;
   font-size: 30px;
@@ -752,10 +752,10 @@ main {
   display: block;
   margin: 65px auto;
 }
-.detail .d-on figure img {
+.detail-p .d-on figure img {
   width: 100%;
 }
-.detail .d-on p {
+.detail-p .d-on p {
   text-align: left;
   font-family: "pretendard";
   font-weight: 700;
