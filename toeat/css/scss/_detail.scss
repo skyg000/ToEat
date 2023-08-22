@@ -6,17 +6,20 @@ header{
     position: relative;  /* 마지막에 지움 */
 }
 .detail{
-    width: 870px
+    text-align: center;
+    width: 870px;
+    margin: 0 auto
 }
 .detail-p{
     @include wid();
+    margin-bottom: 150px;
 .logo{
     @include wid1();
     
     img{
         width: 150px;
         position: relative;
-        left: 40%;
+        left: 0;
     }
 }
 .d-on{
@@ -43,9 +46,10 @@ header{
 .rev{
     position: relative;
     a{
-        position: absolute;
-        right: 10%;
-        border: 1px solid black;
+        z-index: 20;
+        position: fixed;
+        right: 20px;
+        bottom: 20px;
         border-radius: 50%;
         color: white;
         background-color: #FF6888;

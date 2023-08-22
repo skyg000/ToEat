@@ -1,70 +1,11 @@
-/* @media (max-width : 919px) {
-    main{
-        .stores{
-            .con{
-                .on2{
-                    width: 31% ;
-                }
-            }
-        }
-    }
-    }
-@media (max-width : 876px) {
-    main{
-        .stores{
-            .con{
-                .on2{
-                    width: 30% ;
-                }
-            }
-        }
-    }
-    }
-@media (max-width : 629px) {
-    main{
-        .stores{
-            .con{
-                .on2{
-                    width: 46%;
-                }
-            }
-        }
-    }
-    }
-@media (max-width : 758px) {
-    main{
-        .stores{
-            .con{
-                .on2{
-                    figure{
-                        .ad{
-                            top:70% !important
-                        }
-                        i{
-                            bottom:20% !important
-                        }
-                    }
-                }
-            }
-        }
-    }
-    } */
 
-@import url("../common.css");
-@font-face {
-    font-family: 'Pretendard-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
-@mixin pr-b {font-family: 'pretendard'; font-weight: 700; @content;}
-@mixin wid {width: 1200px;}
-@mixin wid1 {width: 100%;}
-main{
-    @include wid();
-    margin: 50px auto;
+main.sub2{
+    width: 1200px;
+    margin:0px auto;
+    z-index: 5;
+    position: relative;
 .list{
-    @include wid();
+    width: 1200px;
     height: 100%;
     margin: 0 auto;
     h1{
@@ -93,16 +34,16 @@ main{
 }
 .stores{
     .con{
-        @include wid();
+        width: 1200px;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-wrap: wrap;
-        margin: 50px 0;
+        margin: 50px 10px;
+        cursor: pointer;
         .on2{
             width: 24%;
-            height: 100%;
             text-align: center;
-            border: 1px solid black;
+            border: 0.5px solid #999;
             margin: 6px 0;
             border-radius: 20px;
             b{
@@ -132,10 +73,12 @@ main{
                     filter: brightness(0.7);
                 }
             }
+            
             p{
-                @include pr-b{font-size: 16px};
+                @include pr-r{font-size: 16px};
                 text-align: left;
                 margin: 10px 17px 10px 15px;
+                
             }
             
         }
@@ -143,11 +86,10 @@ main{
 }
 }
 @media (min-width:481px)and (max-width:1200px)  {
-    main{
-        @include wid1();
-        margin: 50px auto;
+    main.sub2{
+        width: 90%;
     .list{
-        @include wid1();
+        width: 100%;
         height: 100%;
         margin: 0 auto;
         padding: 0 10px;
@@ -176,16 +118,16 @@ main{
         }
     }
     .stores{
-        @include wid1();
+        width: 100%;
         padding:10px;
         .con{
-            @include wid1();
+            width: 100%;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
             margin: 50px 0;
             .on2{
-                width: 32%;
+                width: 49%;
                 text-align: center;
                 border: 1px solid black;
                 margin: 6px 0;
@@ -218,7 +160,7 @@ main{
                     }
                 }
                 p{
-                    @include pr-b{font-size: 14px};
+                    @include pr-r{font-size: 14px};
                     text-align: left;
                     margin: 10px 17px 10px 15px;
                 }
@@ -232,12 +174,10 @@ main{
     }
 }
 @media (max-width:480px){
-    main{
-        // @include wid1();
-        width:95%;
-        margin: 50px auto;
+    main.sub2{
+        width: 100%;
     .list{
-        @include wid1();
+        width: 100%;
         height: 100%;
         margin: 0;
         h1{
@@ -266,16 +206,17 @@ main{
         }
     }
     .stores{
-        @include wid1();
+        width: 100%;
         margin: 0;
         .con{
-            @include wid1();
+            width: 100%;
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            margin: 30px 0 45px;
+            margin: 30px 0 90px;
+            padding: 0 10px;
             .on2{
-                width: 48%;
+                width: 100%;
                 text-align: center;
                 border: 1px solid black;
                 margin: 6px 0;
@@ -322,4 +263,3 @@ main{
         width: 100%;
     }
 }
-/* @import "../scss/sub2"; */

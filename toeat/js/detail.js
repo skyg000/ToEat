@@ -3,25 +3,37 @@ fetch('./js/data/md.json')
 .then(res=>res.json())
 .then(data=>{   
     let k = localStorage.getItem("pagecode")
+    let item = data.list[k]
+    
+    let sk = sessionStorage.getItem("s_code")
+    if(!sk){
+        sessionStorage.setItem('s_code',item.code)
+    }else{
+        if(!sk.includes(item.code)){
+            let codes = sk + ',' + item.code;
+            sessionStorage.setItem('s_code',codes)
+        }
+    }
+    
     if(!k) {
         alert("정상적인 접근 해주세요.")
         location.href='./';
         return false;
     }
     elUl.innerHTML = `
-    <li class="d-on" >
-                    <b>${data[k].name}</b>
-                    <p>${data[k].description}</p>
+                <li class="d-on" >
+                    <b>${item.name}</b>
+                    <p>${item.description}</p>
                     <figure>
-                        <img src="${data[k].images}" alt="">
+                        <img src="${item.images}" alt="">
                     </figure>
-                    <p>${data[k].menus}</p>
+                    <p>${item.menus}</p>
                     <p class = "ad1">
                     <i class="fa-solid fa-location-dot"></i>
-                        ${data[k].adress}
+                        ${item.adress}
                     </p>
-                    <p>${data[k].phone}</p>
-                    <p>${data[k].time}</p>
+                    <p>${item.phone}</p>
+                    <p>${item.time}</p>
                 </li>
     `
 });

@@ -1,16 +1,7 @@
-let s_code = ['1721530874','31564605','13321644','11717437','12788575','13113902','1555782691','11717437','13321644'],
-    w_code = ['31564605','13321644','31564605','13321644'];
-
-sessionStorage.setItem('s_code',JSON.stringify(s_code))
-localStorage.setItem('w_code',JSON.stringify(w_code))
-
-
 const con = document.querySelector('.con')
-let tag ='', 
-    s_arr = JSON.parse(sessionStorage.s_code),
-    l_arr = JSON.parse(localStorage.w_code);
+let tag ='';
 
-
+let s_arr = sessionStorage.getItem('s_code'), l_arr = localStorage.getItem('w_code');
 $(".list ul li a").each(function(k,v){
     $(this).click(function(e){
         e.preventDefault();
@@ -29,38 +20,49 @@ $(".list ul li a").each(function(k,v){
 
 
 function list(q) {
+    tag =``;
     fetch('./js/data/md.json')
     .then(res=>res.json())
-    .then(data=>{   
-        data.forEach((v,k)=>{
-            for(let i=0; i<q.length; i++){
-                if(v.code == q[i]){
-                    tag += `
-                    <li class="on2" onclick="pageMove(${k})">
-                            <figure>
-                                <img src="${v.images}" alt="">
-                                <p class = "ad">
-                                ${v.adress}
-                                </p>
-                                <i class="fa-solid fa-location-dot"></i>
-                            </figure>
-                                <b>${v.name}</b>
-                                <p>${v.time}</p>
-                                <p>${v.phone}</p>
-                    </li>
-                    `
-                    
+    .then(({list})=>{   
+        list.forEach((v,k)=>{
+            if(!q) { tag = ` <h2> 최근 본 목록이 없습니다. </h2> ` }
+            else {
+                let code_arr = q.split(',');
+                for(let i=0; i<code_arr.length; i++){
+                    if(v.code == code_arr[i]){
+                        tag += `
+                        <li class="on2" onclick="pageMove(${k})">
+                                <figure>
+                                    <img src="${v.images}" alt="">
+                                    <p class = "ad">
+                                    ${v.adress}
+                                    </p>
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </figure>
+                                    <b>${v.name}</b>
+                                    <p>
+                                    ${v.time}
+                                    </p>
+                                    <p>
+                                    ${v.phone}
+                                    </p>
+                        </li>
+                        `
+                    }
                 }
             }
+            
         })
         con.innerHTML = tag;
     })
 }
 
-list(s_arr,l_arr)
+list(s_arr)
+
 
 function pageMove(e){
     localStorage.setItem("pagecode",e);
+    sessionStorage.setItem("pagecode",e);
     location.href='./detail.html';
 }
 
