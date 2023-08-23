@@ -30,18 +30,22 @@ header{
         display: block;
         margin: 65px auto;
     }
+
     figure{
+        width: 100%;
+        height: 450px;
         img{
-            @include wid1();
+            height: 100%;
+        }
         }
     }
     p{
         text-align: left;
-        @include pr-b{font-size:20px}
+        @include pr-r{font-size:20px}
     }
 }
 
-}
+
 
 .rev{
     position: relative;
@@ -49,7 +53,7 @@ header{
         z-index: 20;
         position: fixed;
         right: 20px;
-        bottom: 20px;
+        bottom: 120px;
         border-radius: 50%;
         color: white;
         background-color: #FF6888;
@@ -57,5 +61,37 @@ header{
             padding: 20px;
             font-size: 50px;
         }
+    }
+}
+/* ===============================media================================ */
+@media (max-width:1200px)  {
+    .detail-p{
+        width: 100%;
+    }
+    .detail{
+        width: 90%;
+    
+    .d-list{
+        .d-on{
+            b{
+                figure{
+                    margin-bottom: 50px;
+                    img{
+                        
+                    }
+                }
+                p{
+                    margin: 0 auto;
+                }
+            }
+            .des{
+                @include pr-r{font-size: 20px};
+                margin-bottom: 50px;
+            }
+            p{
+                @include pr-r{font-size: 20px};
+            }
+        }
+    }
     }
 }

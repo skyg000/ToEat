@@ -948,13 +948,17 @@ header {
   display: block;
   margin: 65px auto;
 }
-.detail-p .d-on figure img {
+.detail-p .d-on figure {
   width: 100%;
+  height: 450px;
 }
-.detail-p .d-on p {
+.detail-p .d-on figure img {
+  height: 100%;
+}
+.detail-p p {
   text-align: left;
   font-family: "pretendard";
-  font-weight: 700;
+  font-weight: 500;
   font-size: 20px;
 }
 
@@ -965,7 +969,7 @@ header {
   z-index: 20;
   position: fixed;
   right: 20px;
-  bottom: 20px;
+  bottom: 120px;
   border-radius: 50%;
   color: white;
   background-color: #FF6888;
@@ -973,4 +977,31 @@ header {
 .rev a i {
   padding: 20px;
   font-size: 50px;
+}
+
+/* ===============================media================================ */
+@media (max-width: 1200px) {
+  .detail-p {
+    width: 100%;
+  }
+  .detail {
+    width: 90%;
+  }
+  .detail .d-list .d-on b figure {
+    margin-bottom: 50px;
+  }
+  .detail .d-list .d-on b p {
+    margin: 0 auto;
+  }
+  .detail .d-list .d-on .des {
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  .detail .d-list .d-on p {
+    font-family: "pretendard";
+    font-weight: 500;
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=common.css.map */

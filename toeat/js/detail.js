@@ -23,7 +23,7 @@ fetch('./js/data/md.json')
     elUl.innerHTML = `
                 <li class="d-on" >
                     <b>${item.name}</b>
-                    <p>${item.description}</p>
+                    <p class="des">${item.description}</p>
                     <figure>
                         <img src="${item.images}" alt="">
                     </figure>
