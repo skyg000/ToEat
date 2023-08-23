@@ -440,6 +440,7 @@ main.sub2 {
   margin: 0px auto;
   z-index: 5;
   position: relative;
+  /* ===============================contents================================ */
 }
 main.sub2 .list {
   width: 1200px;
@@ -477,14 +478,14 @@ main.sub2 .stores .con {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  margin: 50px 10px;
+  margin: 50px 0px 250px;
   cursor: pointer;
 }
 main.sub2 .stores .con .on2 {
   width: 24%;
   text-align: center;
   border: 0.5px solid #999;
-  margin: 6px 0;
+  margin: 6px 6px;
   border-radius: 20px;
 }
 main.sub2 .stores .con .on2 b {
@@ -526,9 +527,11 @@ main.sub2 .stores .con .on2 p {
   margin: 10px 17px 10px 15px;
 }
 
+/* ===============================media================================ */
 @media (min-width: 481px) and (max-width: 1200px) {
   main.sub2 {
     width: 90%;
+    /* ===============================m-contents================================ */
   }
   main.sub2 .list {
     width: 100%;
@@ -582,7 +585,7 @@ main.sub2 .stores .con .on2 p {
   }
   main.sub2 .stores .con .on2 b {
     font-family: "pretendard";
-    font-weight: 700;
+    font-weight: 500;
     font-size: 16px;
   }
   main.sub2 .stores .con .on2 figure {
@@ -590,7 +593,7 @@ main.sub2 .stores .con .on2 p {
   }
   main.sub2 .stores .con .on2 figure .ad {
     font-family: "pretendard";
-    font-weight: 700;
+    font-weight: 500;
     font-size: 14px;
     text-align: left;
     margin: 10px 17px 10px 25px;
@@ -622,9 +625,11 @@ main.sub2 .stores .con .on2 p {
     width: 100%;
   }
 }
+/* ===============================media================================ */
 @media (max-width: 480px) {
   main.sub2 {
     width: 100%;
+    /* ===============================m-contents================================ */
   }
   main.sub2 .list {
     width: 100%;
@@ -680,16 +685,16 @@ main.sub2 .stores .con .on2 p {
   }
   main.sub2 .stores .con .on2 b {
     font-family: "pretendard";
-    font-weight: 700;
-    font-size: 15px;
+    font-weight: 500;
+    font-size: 16px;
   }
   main.sub2 .stores .con .on2 figure {
     position: relative;
   }
   main.sub2 .stores .con .on2 figure .ad {
     font-family: "pretendard";
-    font-weight: 700;
-    font-size: 12px;
+    font-weight: 500;
+    font-size: 14px;
     text-align: left;
     margin: 10px 17px 10px 25px;
     position: absolute;
@@ -712,7 +717,7 @@ main.sub2 .stores .con .on2 p {
   }
   main.sub2 .stores .con .on2 p {
     font-family: "pretendard";
-    font-weight: 700;
+    font-weight: 500;
     font-size: 12px;
     text-align: left;
     margin: 10px 17px 10px 15px;
