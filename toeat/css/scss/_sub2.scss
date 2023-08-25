@@ -76,10 +76,16 @@ main.sub2{
                 @include pr-b{font-size: 16px};
                 text-align: left;
                 margin: 10px 17px 10px 15px;
+                
             }
-            
         }
     }
+    /* .text-overflow-lines{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+    } */
 }
 }
 @media (max-width:1200px)  {

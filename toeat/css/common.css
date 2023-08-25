@@ -863,6 +863,14 @@ main.sub2 .list .listin .on1 .d {
 main.sub2 .list .listin .on1.on {
   background-color: #eee;
 }
+main.sub2 .stores {
+  /* .text-overflow-lines{
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      text-overflow: ellipsis;
+  } */
+}
 main.sub2 .stores .con {
   width: 1200px;
   display: flex;

@@ -41,7 +41,7 @@ function list(q) {
                                     <i class="fa-solid fa-location-dot"></i>
                                 </figure>
                                     <b>${v.name}</b>
-                                    <p>${v.time}</p>
+                                    <p class="text-overflow-lines">${v.time}</p>
                                     <p>${v.phone}</p>
                         </li>
                         `
