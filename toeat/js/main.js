@@ -1,19 +1,3 @@
-
-function checkCode(){
-    let wr_code = localStorage.getItem("w_code");
-    if (wr_code){
-        wr_arr = wr_code.split(',');
-        let setData = $(".code_insert").data('code');
-        for(let i=0; i<wr_arr.length; i++){
-            if(wr_arr[i] == setData){
-                $(".code_insert").addClass('active')
-            } else {
-                $(".code_insert").removeClass('active')
-            }
-        }
-    }
-}
-
 let ranNum = Math.floor(Math.random()*627);
 fetch("./js/data/md.json")
             .then((data) => data.json())
@@ -25,8 +9,7 @@ fetch("./js/data/md.json")
                     url = `<a href="${list[ranNum].booking}" target="_blank">네이버 예약</a>`
                 }
                 $(".store-img figure > img").attr('src',list[ranNum].images)
-                $(".store-img figure > figcaption > p").attr('data-code',list[ranNum].code)
-                $(".store-name").text(list[ranNum].name)
+                $(".store-name").html(`<span>${list[ranNum].name}</span><p class="code_insert" onClick="code_in(${list[ranNum].code})" data-code='${list[ranNum].code}'></p>`)
                 $(".column").eq(1).find("div").eq(0).text(list[ranNum].adress)
                 $(".column").eq(1).find("div").eq(1).text(list[ranNum].phone ? list[ranNum].phone  : '등록된 전화번호가 없습니다.')
                 $(".column").eq(1).find("div").eq(2).text(list[ranNum].time ? list[ranNum].time.substr(0,28)+"..."  : '등록된 시간이 없습니다.' )
@@ -35,6 +18,10 @@ fetch("./js/data/md.json")
                 $(".column").eq(1).find("div").eq(5).text(list[ranNum].category)
                 $(".column").eq(1).find("div").eq(6).text(list[ranNum].menus[0])
                 checkCode();
+                $(".detaild").on('click',()=>{
+                    localStorage.setItem("pagecode",ranNum);
+                    location.href='./detail.html';
+                })
             })
 
 const canvas = document.querySelector('canvas'), ctx = canvas.getContext('2d'), dragBox = document.querySelector('.main > article');
@@ -90,16 +77,18 @@ canvas.onclick = function(event){
     const y = event.clientY - ctx.canvas.offsetTop;
 
     const list_html = document.querySelector('.store')
-    
     let tag ='',tag_li='',categorys=[],caBtn='';
     
 
     ico_xy.forEach((v,k) => {
        let pos ={sx:v.x, dx:v.x + v.w, sy:v.y, dy:v.y + v.h};
        if(pos.sx < x && pos.dx > x && pos.sy < y && pos.dy > y){
+        if($(window).width() < 481) $(".main article button").show();
+        $(list_html).addClass('flex')
         list_html.innerHTML = '';
         
             tag +=`
+            
                 <div class="eat_title">
                     <figure>
                         <p><img src="./images/main-img/logo-orange.png" alt="logo"></p>
@@ -130,6 +119,14 @@ canvas.onclick = function(event){
                 tag += tag_li;
                 tag += `</ul>`;
                 list_html.innerHTML = tag;
+                list_html.classList.add("active");
+
+                if($(window).width() < 481) {
+                     let btnTop = $(".store").offset().top - 50;
+                     $(".main article > button").css("top", btnTop);
+                }
+
+                 
 
                 let ca = new Set(categorys);
                 let ca_arr = [...ca];
@@ -138,7 +135,6 @@ canvas.onclick = function(event){
                 }
                 $(".eat_title").find('span').html(caBtn)
             })
-
         } 
     });
 }
@@ -146,10 +142,11 @@ canvas.onclick = function(event){
 let newTage = '';
 function newPop(e){
     const list_html = document.querySelector('.store')
+    list_html.classList.remove('active');
     fetch("./js/data/md.json")
             .then((data) => data.json())
             .then(({ list })=>{
-                list.forEach((data)=>{
+                list.forEach((data,k)=>{
                     if (data.code == e) {
                         let url=``;
                         if(data.booking == '') {
@@ -161,13 +158,16 @@ function newPop(e){
                             <div class="store-img">
                                 <figure>
                                     <img src="${data.images}" alt="">
-                                    <figcaption>
-                                        <p class="code_insert" onClick="code_in(${data.code})" data-code="${data.code}"></p>
-                                    </figcaption>
                                 </figure>
+                                <div class="padding">
+                                    <div class="row look-detail1">
+                                        <div><img src="./images/main-img/icons/map.png" alt=""></div>
+                                        <div class="detaild">자세히 보기</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="padding">
-                                <div class="store-name">${data.name}</div>
+                                <div class="store-name"><span>${data.name}</span><p class="code_insert" onClick="code_in(${data.code})" data-code='${data.code}'></p></div>
                                 <div class="row">
                                     <div class="column">
                                         <div><img class="icon" src="./images/main-img/icons/location.png" alt=""></div>
@@ -192,16 +192,22 @@ function newPop(e){
                             <div class="padding">
                                 <div class="row look-detail2">
                                     <div><img src="./images/main-img/icons/map.png" alt=""></div>
-                                    <div>자세히 보기</div>
+                                    <div onclick="detail(${k})">자세히 보기</div>
                                 </div>
                             </div>
                         `;
                     }
+                
                 })
                 checkCode()
             })
 }
 
+
+function detail(k){
+        localStorage.setItem("pagecode",k);
+        location.href='./detail.html';
+}
 
 let mov=false;
 canvas.addEventListener( "mousedown", (e)=>{
@@ -228,7 +234,39 @@ function moves(x,y){
             let my = e.clientY - y;
             let marginLeft = thisLeft + mx;
             let marginTop = thisTop + my;
-            canvas.style=`margin-left:${marginLeft}px; margin-top:${marginTop}px; z-index:1000;`
+            canvas.style=`margin-left:${marginLeft}px; margin-top:${marginTop}px;`
+        } else {
+            canvas.style.zIndex = 0;
+        }
+    })   
+}
+
+let mov2=false;
+canvas.addEventListener( "touchstart", (e)=>{
+        let x = e.touches[0].clientX;
+        let y = e.touches[0].clientY;
+        mov2 = true;
+        moves2(x,y)
+});
+canvas.addEventListener( "touchend", (e)=>{
+    let x = e.touches[0].clientX;
+    let y = e.touches[0].clientY;
+    mov2 = false; 
+    moves2(x,y)
+});
+
+
+
+function moves2(x,y){
+    let thisLeft = Number(window.getComputedStyle(canvas).getPropertyValue('margin-left').replace(/px/g, '') )
+    let thisTop = Number(window.getComputedStyle(canvas).getPropertyValue('margin-top').replace(/px/g, '') )
+    canvas.addEventListener( "touchmove", (e)=>{
+        if (mov2) {
+            let mx = e.touches[0].clientX - x;
+            let my = e.touches[0].clientY - y;
+            let marginLeft = thisLeft + mx;
+            let marginTop = thisTop + my;
+            canvas.style=`margin-left:${marginLeft}px; margin-top:${marginTop}px;`
         } else {
             canvas.style.zIndex = 0;
         }
@@ -238,7 +276,6 @@ function moves(x,y){
 
 function code_in(e){
     let w_codes = localStorage.getItem("w_code")
-    
     if(!w_codes){
         localStorage.setItem("w_code",e)
     } else {
@@ -255,22 +292,28 @@ function code_in(e){
     }    
     checkCode()
 }
-$(".code_insert").on('click',function(){
-    let w_codes = localStorage.getItem("w_code")
-    
-    if(!w_codes){
-        localStorage.setItem("w_code",$(this).data('code'))
-    } else {
-        let w_arr = w_codes.split(',')
-        for(let i=0; i<w_arr.length; i++){
-            if(w_arr[i] != $(this).data('code')){
-                let codes = w_codes + "," + $(this).data('code')
-                localStorage.setItem("w_code", codes)
+
+
+
+function checkCode(){
+    let wr_code = localStorage.getItem("w_code");
+    let setData = $(".code_insert").data('code');
+    if (wr_code){
+        wr_arr = wr_code.split(',');
+        for(let i=0; i<wr_arr.length; i++){
+            if(wr_arr[i] == setData){
+                $(".code_insert").addClass('active')
             } else {
-                localStorage.setItem("w_code", w_arr.filter(v => v != $(this).data('code')))
-                checkCode()
+                $(".code_insert").removeClass('active')
             }
         }
-    }    
-    checkCode()
-})
+    }
+}
+
+
+function mpopclose(){
+    $('.store').removeClass('flex')
+    
+    $(".main article button").hide();
+}
+

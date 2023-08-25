@@ -1,10 +1,12 @@
+$("header").addClass('sub')
 const elUl = document.querySelector('.d-list')
+let code='';
 fetch('./js/data/md.json')
 .then(res=>res.json())
 .then(data=>{   
     let k = localStorage.getItem("pagecode")
     let item = data.list[k]
-    
+    code = item.code;
     let sk = sessionStorage.getItem("s_code")
     if(!sk){
         sessionStorage.setItem('s_code',item.code)
@@ -37,3 +39,10 @@ fetch('./js/data/md.json')
                 </li>
     `
 });
+
+
+$(".rev a").on('click',(e)=>{
+    e.preventDefault();
+    localStorage.setItem("wr_code",code)
+    location.href='./write.html';
+})

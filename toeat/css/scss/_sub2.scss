@@ -32,19 +32,17 @@ main.sub2{
         }
     }
 }
-/* ===============================contents================================ */
 .stores{
     .con{
         width: 1200px;
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
-        margin: 50px 0px 250px;
-        cursor: pointer;
+        margin: 50px 0;
         .on2{
             width: 24%;
             text-align: center;
-            border: 0.5px solid #999;
+            border: 1px solid #eee;
             margin: 6px 6px;
             border-radius: 20px;
             b{
@@ -70,26 +68,24 @@ main.sub2{
                     width: 100%;
                     height: 250px;
                     margin-bottom: 10px;
-                    border-radius: 20px;
+                    border-radius: 20px 20px 0 0;
                     filter: brightness(0.7);
                 }
             }
-            
             p{
-                @include pr-r{font-size: 16px};
+                @include pr-b{font-size: 16px};
                 text-align: left;
                 margin: 10px 17px 10px 15px;
-                
             }
             
         }
     }
 }
 }
-/* ===============================media================================ */
-@media (min-width:481px)and (max-width:1200px)  {
+@media (max-width:1200px)  {
     main.sub2{
         width: 90%;
+        margin-bottom:120px;
     .list{
         width: 100%;
         height: 100%;
@@ -119,29 +115,27 @@ main.sub2{
             }
         }
     }
-    /* ===============================m-contents================================ */
     .stores{
         width: 100%;
         padding:10px;
         .con{
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             flex-wrap: wrap;
             margin: 50px 0;
             .on2{
                 width: 49%;
                 text-align: center;
-                border: 1px solid black;
                 margin: 6px 0;
                 border-radius: 20px;
                 b{
-                    @include pr-r{font-size: 16px};
+                    @include pr-b{font-size: 16px};
                 }
                 figure{
                     position: relative;
                     .ad{
-                        @include pr-r{font-size: 14px};
+                        @include pr-b{font-size: 14px};
                         text-align: left;
                         margin: 10px 17px 10px 25px;
                         position: absolute;
@@ -158,12 +152,11 @@ main.sub2{
                         width: 100%;
                         height: 250px;
                         margin-bottom: 10px;
-                        border-radius: 20px;
                         filter: brightness(0.7);
                     }
                 }
                 p{
-                    @include pr-r{font-size: 14px};
+                    @include pr-b{font-size: 14px};
                     text-align: left;
                     margin: 10px 17px 10px 15px;
                 }
@@ -176,10 +169,8 @@ main.sub2{
         width: 100%;
     }
 }
-/* ===============================media================================ */
 @media (max-width:480px){
     main.sub2{
-        width: 100%;
     .list{
         width: 100%;
         height: 100%;
@@ -209,7 +200,6 @@ main.sub2{
             }
         }
     }
-    /* ===============================m-contents================================ */
     .stores{
         width: 100%;
         margin: 0;
@@ -218,21 +208,19 @@ main.sub2{
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            margin: 30px 0 90px;
-            padding: 0 10px;
+            margin: 30px 0 45px;
             .on2{
                 width: 100%;
                 text-align: center;
-                border: 1px solid black;
                 margin: 6px 0;
                 border-radius: 20px;
                 b{
-                    @include pr-r{font-size: 16px};
+                    @include pr-b{font-size: 15px};
                 }
                 figure{
                     position: relative;
                     .ad{
-                        @include pr-r{font-size: 14px};
+                        @include pr-b{font-size: 12px};
                         text-align: left;
                         margin: 10px 17px 10px 25px;
                         position: absolute;
@@ -249,13 +237,12 @@ main.sub2{
                         width: 100%;
                         height: 150px;
                         margin-bottom: 10px;
-                        border-radius: 20px;
                         filter: brightness(0.7);
                         object-fit: cover;
                     }
                 }
                 p{
-                    @include pr-r{font-size: 12px};
+                    @include pr-b{font-size: 12px};
                     text-align: left;
                     margin: 10px 17px 10px 15px;
                 }

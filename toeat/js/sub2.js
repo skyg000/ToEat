@@ -1,7 +1,9 @@
+$("header").addClass('sub')
 const con = document.querySelector('.con')
 let tag ='';
 
 let s_arr = sessionStorage.getItem('s_code'), l_arr = localStorage.getItem('w_code');
+
 $(".list ul li a").each(function(k,v){
     $(this).click(function(e){
         e.preventDefault();
@@ -20,7 +22,6 @@ $(".list ul li a").each(function(k,v){
 
 
 function list(q) {
-    tag =``;
     fetch('./js/data/md.json')
     .then(res=>res.json())
     .then(({list})=>{   
@@ -40,14 +41,11 @@ function list(q) {
                                     <i class="fa-solid fa-location-dot"></i>
                                 </figure>
                                     <b>${v.name}</b>
-                                    <p>
-                                    ${v.time}
-                                    </p>
-                                    <p>
-                                    ${v.phone}
-                                    </p>
+                                    <p>${v.time}</p>
+                                    <p>${v.phone}</p>
                         </li>
                         `
+                        
                     }
                 }
             }
@@ -59,10 +57,8 @@ function list(q) {
 
 list(s_arr)
 
-
 function pageMove(e){
     localStorage.setItem("pagecode",e);
-    sessionStorage.setItem("pagecode",e);
     location.href='./detail.html';
 }
 

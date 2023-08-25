@@ -1,10 +1,6 @@
-@import url("../common.css");
-@mixin pr-b {font-family: 'pretendard'; font-weight: 700; @content;}
+
 @mixin wid {width: 870px;}
 @mixin wid1 {width: 100%;}
-header{
-    position: relative;  /* 마지막에 지움 */
-}
 .detail{
     text-align: center;
     width: 870px;
