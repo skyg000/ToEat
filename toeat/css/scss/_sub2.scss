@@ -51,7 +51,7 @@ main.sub2{
             figure{
                 position: relative;
                 .ad{
-                    @include pr-b{font-size: 16px};
+                    @include pr-r{font-size: 16px};
                     text-align: left;
                     margin: 10px 17px 10px 25px;
                     position: absolute;
@@ -73,19 +73,21 @@ main.sub2{
                 }
             }
             p{
-                @include pr-b{font-size: 16px};
+                @include pr-r{font-size: 16px};
                 text-align: left;
                 margin: 10px 17px 10px 15px;
                 
             }
         }
     }
-    /* .text-overflow-lines{
+    .text-overflow-lines{
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
-        text-overflow: ellipsis;
-    } */
+        text-overflow : ellipsis;
+        overflow:hidden;
+       
+    }
 }
 }
 @media (max-width:1200px)  {
