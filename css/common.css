@@ -16,7 +16,8 @@ html, body {
 
 img {
   width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   vertical-align: middle;
 }
 
@@ -34,6 +35,10 @@ figure, article {
 a {
   text-decoration: none;
   color: #000;
+}
+
+.code_insert {
+  cursor: pointer;
 }
 
 header {
@@ -70,14 +75,12 @@ header > section > nav > ul > li {
   font-family: "pretendard";
   font-weight: 500;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 header > section > nav > ul > li.active {
   font-family: "pretendard";
   font-weight: 700;
   font-size: 1.5rem;
-}
-header > section > nav > ul > li:hover > ul {
-  display: block;
 }
 header > section > nav > ul > li > ul {
   position: absolute;
@@ -94,6 +97,7 @@ header > section > nav > ul > li > ul > li {
   font-family: "pretendard";
   font-weight: 500;
   font-size: 1.5rem;
+  cursor: pointer;
 }
 
 footer {
@@ -184,6 +188,7 @@ footer.sub::after {
   font-family: "pretendard";
   font-weight: 700;
   font-size: 18px;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {
@@ -223,6 +228,10 @@ footer.sub::after {
 .row {
   display: flex;
   flex-direction: row;
+}
+
+.detaild, .look-detail2 > div:nth-of-type(2) {
+  cursor: pointer;
 }
 
 .column {
@@ -317,6 +326,13 @@ footer.sub::after {
 }
 .main > article canvas {
   margin-left: 15%;
+  cursor: grab;
+}
+.main > article canvas.active {
+  cursor: grabbing;
+}
+.main > article canvas.over {
+  cursor: pointer;
 }
 .main > article .store {
   width: 430px;
@@ -328,7 +344,6 @@ footer.sub::after {
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  right: 18%;
   z-index: 5;
 }
 .main > article .store .eat_title figure {
@@ -398,7 +413,8 @@ footer.sub::after {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .main > article .store .store-name {
   font-family: "pretendard";
@@ -410,16 +426,13 @@ footer.sub::after {
   align-items: center;
 }
 .main > article .store .store-name p {
-  color: #000;
   margin: 0;
 }
-.main > article .store .store-name p::after {
-  content: "favorite";
+.main > article .store .store-name p > i {
+  color: #b3b3b3;
   font-size: 30px;
-  overflow: hidden;
-  font-family: "Material Symbols Outlined";
 }
-.main > article .store .store-name p.active::after {
+.main > article .store .store-name p.active i {
   color: red;
 }
 .main > article .store .look-detail1 {
@@ -501,7 +514,7 @@ footer.sub::after {
   z-index: 3;
 }
 
-@media screen and (min-width: 481px) and (max-width: 1200px) {
+@media (max-width: 1200px) {
   .char1, .char2, .char3, .char4, .char7, .char8 {
     display: none;
   }
@@ -657,16 +670,16 @@ footer.sub::after {
 }
 .sub1 .wrapper ul li {
   border: 1px solid #ccc;
-  margin-bottom: 4%;
-  width: 48%;
-  max-height: 500px;
+  margin-bottom: 6%;
+  width: 46%;
+  height: 45vh;
   overflow: hidden;
   border-radius: 15px;
   cursor: pointer;
 }
 .sub1 .wrapper ul li .swiper-wrapper {
   width: 100%;
-  height: 50%;
+  height: 60%;
 }
 .sub1 .wrapper ul li .string {
   padding: 0 30px;
@@ -695,60 +708,80 @@ footer.sub::after {
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 10;
   display: none;
 }
 .sub1 .popup i {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  top: 20px;
-  text-align: center;
   color: white;
   font-size: 50px;
   cursor: pointer;
 }
 .sub1 .popup .popup1 {
   width: 60%;
-  height: 700px;
-  overflow-y: auto;
+  height: 80vh;
   border-radius: 20px;
   background-color: white;
   padding: 30px 120px 30px 120px;
-  position: absolute;
-  transform: translateX(-50%);
-  left: 50%;
-  top: 8%;
+  overflow: hidden;
 }
-.sub1 .popup .popup1 p:nth-of-type(1) {
+.sub1 .popup .popup1 > p {
+  text-align: center;
+}
+.sub1 .popup .popup1 > p:nth-of-type(1) {
   font-family: "pretendard";
   font-weight: 700;
   font-size: 25px;
-  text-align: center;
+  line-height: 1.3;
+  margin: 3% auto;
 }
-.sub1 .popup .popup1 p:nth-of-type(2) {
+.sub1 .popup .popup1 > p:nth-of-type(2) {
   font-family: "pretendard";
   font-weight: 500;
   font-size: 16px;
-  text-align: center;
+  line-height: 1.4;
+  width: 80%;
+  margin: 2% auto;
 }
 .sub1 .popup .popup1 div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  overflow-y: scroll;
+  max-height: 70%;
+  padding-right: 5%;
+  margin-left: 5%;
+}
+.sub1 .popup .popup1 div::-webkit-scrollbar {
+  color: white;
+  border-radius: 15px;
+  width: 10px;
+}
+.sub1 .popup .popup1 div::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.sub1 .popup .popup1 div::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.sub1 .popup .popup1 div::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 .sub1 .popup .popup1 div figure {
   text-align: center;
   width: 46%;
+  cursor: pointer;
 }
 .sub1 .popup .popup1 div figure p {
   width: 100%;
 }
 .sub1 .popup .popup1 div figure p img {
-  height: 200px;
+  height: 250px;
   border-radius: 15px;
 }
 .sub1 .popup .popup1 div figure figurecaption {
@@ -760,6 +793,9 @@ footer.sub::after {
 @media (max-width: 1200px) {
   .sub1 {
     width: 80%;
+  }
+  .sub1 .wrapper ul li {
+    height: 50vh;
   }
   .sub1 .wrapper ul li .string {
     padding: 0 12px;
@@ -789,10 +825,26 @@ footer.sub::after {
     font-size: 14px;
   }
 }
+@media (max-width: 768px) {
+  .sub1 h2 {
+    margin-left: 10%;
+  }
+  .sub1 .wrapper ul {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .sub1 .wrapper ul li {
+    width: 80%;
+    height: 48vh;
+  }
+}
 @media (max-width: 480px) {
   .sub1 {
     width: 85%;
-    margin-bottom: 150px;
+  }
+  .sub1 h2 {
+    margin: 4% 0;
   }
   .sub1 .wrapper ul {
     flex-direction: column;
@@ -813,7 +865,10 @@ footer.sub::after {
   }
   .sub1 .popup .popup1 {
     width: 90%;
-    padding: 60px 20px 85px 20px;
+    padding: 30px 20px 80px 20px;
+    height: 78vh;
+    margin-bottom: 24%;
+    overflow: hidden;
   }
   .sub1 .popup .popup1 p:nth-of-type(1) {
     font-family: "pretendard";
@@ -825,9 +880,18 @@ footer.sub::after {
     font-weight: 500;
     font-size: 13px;
   }
+  .sub1 .popup .popup1 div {
+    display: block;
+    margin-bottom: 5%;
+    max-height: 65%;
+  }
+  .sub1 .popup .popup1 div figure {
+    width: 100%;
+  }
 }
 main.sub2 {
   width: 1200px;
+  min-height: 100vh;
   margin: 0px auto;
   z-index: 5;
   position: relative;
@@ -872,23 +936,33 @@ main.sub2 .stores .con {
 }
 main.sub2 .stores .con .on2 {
   width: 24%;
-  height: 100%;
   text-align: center;
   border: 1px solid #eee;
-  margin: 6px 0;
+  margin: 6px 6px;
   border-radius: 20px;
 }
+main.sub2 .stores .con .on2.active i {
+  color: red;
+}
 main.sub2 .stores .con .on2 b {
+  margin: 10px 17px 10px 15px;
   font-family: "pretendard";
   font-weight: 700;
   font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main.sub2 .stores .con .on2 b span i {
+  font-size: 30px;
+  color: #b3b3b3;
 }
 main.sub2 .stores .con .on2 figure {
   position: relative;
 }
 main.sub2 .stores .con .on2 figure .ad {
   font-family: "pretendard";
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   text-align: left;
   margin: 10px 17px 10px 25px;
@@ -911,10 +985,17 @@ main.sub2 .stores .con .on2 figure img {
 }
 main.sub2 .stores .con .on2 p {
   font-family: "pretendard";
-  font-weight: 700;
+  font-weight: 500;
   font-size: 16px;
   text-align: left;
   margin: 10px 17px 10px 15px;
+}
+main.sub2 .stores .text-overflow-lines {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 @media (max-width: 1200px) {
@@ -1092,7 +1173,8 @@ main.sub2 .stores .con .on2 p {
     height: 150px;
     margin-bottom: 10px;
     filter: brightness(0.7);
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   main.sub2 .stores .con .on2 p {
     font-family: "pretendard";
@@ -1111,6 +1193,7 @@ main.sub3 {
   width: 100%;
   position: relative;
   z-index: 5;
+  min-height: 100vh;
 }
 main.sub3 .sub_3_main1 {
   width: 1200px;
@@ -1169,6 +1252,7 @@ main.sub3 .sub_3_main2 .list li {
   border-radius: 20px;
   padding: 20px 30px;
   background-color: white;
+  cursor: pointer;
 }
 main.sub3 .sub_3_main2 .list li .matname {
   font-family: "pretendard";
@@ -1214,6 +1298,7 @@ main.sub3 .sub_3_main2 > div.k .morebtn {
   font-family: "pretendard";
   font-weight: 500;
   font-size: 16px;
+  cursor: pointer;
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
@@ -1231,7 +1316,23 @@ main.sub3 .r_pop {
   display: none;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   z-index: 10;
+}
+main.sub3 .r_pop .popbtn {
+  text-align: center;
+}
+main.sub3 .r_pop .popbtn button {
+  font-family: "pretendard";
+  font-weight: 500;
+  font-size: 30px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: transparent;
+  margin: 0 10px;
+  color: #fff;
+  cursor: pointer;
 }
 main.sub3 .r_pop.active {
   display: flex;
@@ -1239,13 +1340,29 @@ main.sub3 .r_pop.active {
 main.sub3 .r_pop .r_pop1 {
   width: 30%;
   margin: 0px auto;
-  position: fixed;
   z-index: 10;
   background-color: white;
   border-radius: 20px;
   padding: 30px;
   max-height: 450px;
+}
+main.sub3 .r_pop .r_pop1 > div {
   overflow-y: auto;
+  max-height: 390px;
+}
+main.sub3 .r_pop .r_pop1 > div::-webkit-scrollbar {
+  width: 3px;
+  margin-right: 50px;
+  height: 80vh;
+}
+main.sub3 .r_pop .r_pop1 > div::-webkit-scrollbar-thumb {
+  background-color: #000;
+}
+main.sub3 .r_pop .r_pop1 > div::-webkit-scrollbar-track {
+  background-color: #eee;
+}
+main.sub3 .r_pop .r_pop1 > div > * {
+  padding-right: 10px;
 }
 main.sub3 .r_pop .matname {
   font-family: "pretendard";
@@ -1290,21 +1407,6 @@ main.sub3 .r_pop .say {
   font-size: 16px;
   text-align: center;
 }
-main.sub3 .r_pop .popbtn {
-  text-align: center;
-}
-main.sub3 .r_pop .popbtn button {
-  font-family: "pretendard";
-  font-weight: 500;
-  font-size: 16px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  background: #eee;
-  margin: 0 10px;
-  color: black;
-  cursor: pointer;
-}
 
 @media (max-width: 1200px) {
   main.sub3 {
@@ -1333,7 +1435,7 @@ main.sub3 .r_pop .popbtn button {
     height: 28px;
   }
   main.sub3 .sub_3_main2 .star {
-    width: 100%;
+    width: 30%;
   }
   main.sub3 .sub_3_main2 .morebtn {
     padding: 10px 20px;
@@ -1372,6 +1474,7 @@ main.sub3 .r_pop .popbtn button {
 }
 .sub4 {
   margin-bottom: 150px;
+  min-height: 100vh;
 }
 .sub4 article {
   width: 1200px;
@@ -1594,10 +1697,11 @@ main.sub3 .r_pop .popbtn button {
   }
 }
 .sub5 {
-  width: 90%;
+  width: 100%;
   position: relative;
   z-index: 5;
   margin: 0 auto 150px;
+  min-height: 100vh;
 }
 .sub5 .sub5_img figure img {
   width: 100%;
@@ -1780,6 +1884,7 @@ main.wr {
   z-index: 5;
   position: relative;
   margin-bottom: 80px;
+  min-height: 100vh;
 }
 main.wr .write_title {
   margin-top: 200px;
@@ -1853,6 +1958,9 @@ main.wr .write_box textarea {
 main.wr .write_box textarea:focus {
   outline: 2px solid #FF6888;
 }
+main.wr .write_box textarea:focus::-moz-placeholder {
+  color: transparent;
+}
 main.wr .write_box textarea:focus::placeholder {
   color: transparent;
 }
@@ -1910,19 +2018,20 @@ main.wr .write_box form > div > div button {
 }
 .detail {
   text-align: center;
-  width: 870px;
-  margin: 0 auto;
+  width: 1200px;
+  margin: 0 auto 150px;
+  min-height: 100vh;
 }
 
 .detail-p {
-  width: 870px;
+  width: 1200px;
   margin-bottom: 150px;
 }
 .detail-p .logo {
   width: 100%;
 }
 .detail-p .logo img {
-  width: 150px;
+  width: 110px;
   position: relative;
   left: 0;
 }
@@ -1964,6 +2073,16 @@ main.wr .write_box form > div > div button {
 .rev a i {
   padding: 20px;
   font-size: 50px;
+}
+.rev a.fav {
+  bottom: 220px;
+}
+.rev a.fav.active {
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+.rev a.fav.active i {
+  color: red;
 }
 
 /* ===============================media================================ */
