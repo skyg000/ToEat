@@ -1,5 +1,5 @@
 ### To Eat
-## 제작 사이트 바로가기=> <a href="https://skyg000.github.io/team-p/"></a>
+## 제작 사이트 바로가기=> https://skyg000.github.io/ToEat/ <a href="https://skyg000.github.io/team-p/"></a> 
 
 🍴 Today Eat <br>
 서울 맛집 정보 공유 사이트<br>
